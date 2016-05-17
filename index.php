@@ -1,7 +1,7 @@
 <?php
 // シンプルMVCコントローラー
 // 予約後：contents,content,models,model,view,<TableName>['RecordName']
-$params = @explode('/', $_GET['model']);
+$params = @explode('/', $_GET['url']);
 $contents = @array_shift($params);
 if($contents=='') {
 	$contents = "news" ;
