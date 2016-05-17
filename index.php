@@ -6,7 +6,10 @@ $contents = @array_shift($params);
 if($contents=='') {
 	$contents = "news" ;
 }
-
+if(!file_exists('./contents/'.$contents.'.php')) {
+	// コンテンツが存在しない
+	$contents = "news" ;
+}
 //コンテンツから必要なモデル,ビューを生成する
 include ('./contents/'.$contents.'.php');
 $ret = content() ;
